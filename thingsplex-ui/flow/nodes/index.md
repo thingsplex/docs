@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Nodes
+parent: Flows
 nav_order: 2
 has_children: true
 ---
