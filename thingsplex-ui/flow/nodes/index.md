@@ -2,6 +2,7 @@
 layout: default
 title: Nodes
 parent: Flows
+grand_parent : Thingsplex UI
 nav_order: 2
 has_children: true
 ---

@@ -2,6 +2,7 @@
 layout: default
 title: Triggers
 parent: Nodes
+grand_parent : Flows
 nav_order: 1
 ---
 
