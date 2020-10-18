@@ -10,7 +10,7 @@ has_children: true
 
 ## Introduction
 
-Thingsplex Flows is an automation engine. Each flow represents automation that is defined as a sequence of connected nodes (graph). Each node represents either flow trigger, data manipulation, flow control, or activity. Connections between nodes represent transitions (flows) from one node to another.
+Thingsplex Flows is an automation engine. Each flow represents automation that is defined as a sequence of connected nodes (graph). Each node represents either flow trigger, data manipulation, flow control, or activity. Connections between nodes represent transitions from one node to another.
 
 ![Flow introduction](img/flow-intro.png)
 
@@ -51,7 +51,9 @@ Outbound connectors can be one of 4 types :
 - Orange color means timeout. Not every node supports timeout.
 - A yellow color means the false outcome of a flow control node.  
 
-### Node groups
+### Nodes
+
+All modes are divided into the following groups :
 
 * [Triggers](nodes/triggers.md)
 * [Actions](nodes/actions.md)
@@ -59,3 +61,13 @@ Outbound connectors can be one of 4 types :
 * [Data operations](nodes/data.md)
 * Tools
 
+### Variables
+
+Sometimes, a user might need to save state or data and use it in another node or another flow. The data can be saved into a variable that can be used in any other node. Variables can be of 2 types:
+
+ - global - shared between flows.  
+ - local - accessible only in the flow where it was defined.
+
+ Variables are also called "flow context." . Thingsplex UI has a dedicated context introspection view. It can be used for viewing and updating existing variables and for creating new ones.
+
+ ![context](img/context.png)
