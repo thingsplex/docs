@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Triggers
-parent: Nodes
+title: Actions
+parent: Flows
 nav_order: 1
 ---
 # Actions

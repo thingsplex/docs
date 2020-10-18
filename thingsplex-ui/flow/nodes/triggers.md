@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Triggers
-parent: Nodes
-grand_parent : Flows
+parent: Flows
+grand_parent : Thingsplex UI
 nav_order: 1
 ---
 
