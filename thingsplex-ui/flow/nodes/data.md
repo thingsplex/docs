@@ -21,7 +21,9 @@ To make a variable, click on **Add** in the set_variable node. Then choose a nam
 
 ## Transform node
 
-Transform node performs more advanced data transformations . The result is assigned to *Result variable*
+Transform node is meant for more advanced data manipulations .
+The result of transformation is assigned to *Result variable*
+
 **Supported transformation types :** 
 * Calculate 
 * Map 
@@ -29,15 +31,23 @@ Transform node performs more advanced data transformations . The result is assig
 * XPath
 * Tempelate 
 
-### Calculate 
+### Calculate
+
+![Calculate](img/node-transform-calc.png)
+
 The transformation type executes expression set in *Expression* field and saves result into *Result variable*.
-Epression supports all local and global variables using their normal names and input variable as **input** and Left variable as **variable** .
+Epression supports all local and global variables by using their normal names .Input variable can be addressed using **input** name and Left variable (from dropdown menu) as **variable** .
 Assuming we have variables *address* , expression can be `address+100` , result will be assigned to *Result variable*
 
 ### Map
 
+Map transformation maps input values from input variable to output variable
+
+![Map](img/node-transform-map.png)
+
 
 ### JsonPath
+
 
 ### Xpath
 
