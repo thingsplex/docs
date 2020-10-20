@@ -39,6 +39,21 @@ The transformation type executes expression set in *Expression* field and saves 
 Epression supports all local and global variables by using their normal names .Input variable can be addressed using **input** name and Left variable (from dropdown menu) as **variable** .
 Assuming we have variables *address* , expression can be `address+100` , result will be assigned to *Result variable*
 
+#### Supported operators 
+
+- Modifiers: + - / * & | ^ ** % >> <<
+- Comparators: > >= < <= == != =~ !~
+- Logical ops: || &&
+- Numeric constants, as 64-bit floating point (12345.678)
+- String constants (single quotes: 'foobar')
+- Date constants (single quotes, using any permutation of RFC3339, ISO8601, ruby date, or unix date; date parsing is automatically tried with any string constant)
+- Boolean constants: true false
+- Parenthesis to control order of evaluation ( )
+- Arrays (anything separated by , within parenthesis: (1, 2, 'foo'))
+- Prefixes: ! - ~
+- Ternary conditional: ? :
+- Null coalescence: ??
+
 ### Map
 
 Map transformation maps input values from input variable to output variable
