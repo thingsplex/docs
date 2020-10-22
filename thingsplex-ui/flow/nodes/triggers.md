@@ -26,7 +26,18 @@ User configures trigger by selecting objects using dropdown selectors.
 
 ### Advanced mode
 
-The mode should be used only when device/event can't be configured using Normal mode.The mode imply that user know exact device-service topic address,service name and interface. Address can be dynamically configured using templating syntax, for instance `pt:j1/mt:evt/rt:dev/rn:zw/ad:1/sv:scene_ctrl/ad:{{setting "dev.address"}}_0` or `pt:j1/mt:evt/rt:dev/rn:zw/ad:1/sv:scene_ctrl/ad:{{variable "address" false}}_0`
+The mode should be used only when device/event can't be configured using Normal mode.The mode imply that user know exact device-service topic address,service name and interface. Address can be dynamically configured using templating syntax, for instance 
+```
+{% raw %}
+pt:j1/mt:evt/rt:dev/rn:zw/ad:1/sv:scene_ctrl/ad:{{setting "dev.address"}}_0
+{% endraw %}
+```
+or 
+```
+{% raw %}
+pt:j1/mt:evt/rt:dev/rn:zw/ad:1/sv:scene_ctrl/ad:{{variable "address" false}}_0
+{% endraw %}
+```
 
 ![Trigger normal mode](img/trigger_node_exp_2.png)
 

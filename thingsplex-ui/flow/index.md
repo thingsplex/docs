@@ -72,7 +72,7 @@ Sometimes, a user might need to save state or data and use it in another node or
 
  ![context](img/context.png)
 
- ### Settings
+### Settings
 
 Settings represent set of flow configurations. Normally author of a flow might ask users to configure it after installation (import). Settings must be configured using special *Settings* UI. 
 

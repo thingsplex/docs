@@ -26,7 +26,12 @@ Action node creates FIMP messages and publishes to MQTT topic .
  
  Using template variables in *Address* field :
  
- `pt:j1/mt:evt/rt:dev/rn:test/ad:1/sv:sensor_lumin/ad:{{ variable "counter" false }}_0`
+ ```
+ {% raw %}
+ pt:j1/mt:evt/rt:dev/rn:test/ad:1/sv:sensor_lumin/ad:{{ variable "counter" false }}_0
+ {% endraw %}
+ ```
+ 
  where *counter* is a name of variable 
  *false* is a flag which defines whether the variable is global or local
   In our example, if variable counter == 11 , the address string will be converted into - 

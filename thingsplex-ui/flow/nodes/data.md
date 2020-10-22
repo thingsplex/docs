@@ -81,12 +81,15 @@ Example :
 
 ```json
 {
-    "temp": "{{variable "setpoint" false}}",
-    "type": "{{setting "type" }}",
+    "temp": {% raw %} "{{variable "setpoint" false}}"{% endraw %},
+    "type": {% raw %} "{{setting "type" }}"{% endraw %},
     "unit": "C"
   }
 
 ```
+
+
+
 Given that *setpoint* variable = 22.5 and setting "type" = "heat" , the template will result into following message : 
 
 ```json
