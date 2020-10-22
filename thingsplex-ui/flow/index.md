@@ -71,3 +71,9 @@ Sometimes, a user might need to save state or data and use it in another node or
  Variables are also called "flow context." . Thingsplex UI has a dedicated context introspection view. It can be used for viewing and updating existing variables and for creating new ones.
 
  ![context](img/context.png)
+
+ ### Settings
+
+Settings represent set of flow configurations. Normally author of a flow might ask users to configure it after installation (import). Settings must be configured using special *Settings* UI. 
+
+![context](img/flow-settings.png)

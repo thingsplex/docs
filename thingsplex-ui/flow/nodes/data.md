@@ -12,11 +12,11 @@ nav_order: 4
 
 You can make as many variables as you like in your flows. Variables can be used to save the state of your devices, values read from a REST Action, mode of your site or similar. In the **conditions** section there was mentioned that it is possible to trigger **if** mode is not vacation. To check what mode you are in, you can use a global variable. This can be done by using a **Home event trigger** that triggers whenever mode is changed, that sends its value directly in to a **set_variable** node that saves the string value in a variable. First we need to make the variable. 
 
-![Variables](img/variables.png)
+![Variables](img/node-set-variable-1.png)
 
 To make a variable, click on **Add** in the set_variable node. Then choose a name, description, and type. In this case the type should be **string** as we want to save the mode. If you save the variable in a different flow than where you want to use it, you need to make sure it is **Global** by ticking the **in memory** box. Your variable configuration should then look like this:
 
-![Set variables](img/set-variables.png)
+![Set variables](img/node-set-variable-2.png)
 
 
 ## Transform node
@@ -65,7 +65,38 @@ The transformation maps input value, from input variable to output variable usin
 
 ### JsonPath
 
+The transformation allows to extract data from json request using Json Path query and assign it to a variable. 
+
+![Json path](img/node-transform-jpath.png)
+
 
 ### Xpath
 
+The transformation is very similar to JsonPath but is using XPath expressions to extract data from XML documents. 
+
 ### Template
+
+The transformation should be used to configure variables using template. Template can be a text , json or XML/HTML. Templates support *variables* and *settings*
+Example :
+
+```json
+{
+    "temp": "{{variable "setpoint" false}}",
+    "type": "{{setting "type" }}",
+    "unit": "C"
+  }
+
+```
+Given that *setpoint* variable = 22.5 and setting "type" = "heat" , the template will result into following message : 
+
+```json
+{
+    "temp": "22.5",
+    "type": "heat",
+    "unit": "C"
+  }
+
+```
+
+![Json path](img/node-transform-template.png)
+
