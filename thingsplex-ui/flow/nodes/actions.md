@@ -10,6 +10,8 @@ nav_order: 2
 
 Action node creates FIMP messages and publishes to MQTT topic .
 
+## Generic Action
+
 ### Action config 
 
  Assisted configuration using service lookup.  
@@ -31,7 +33,7 @@ Action node creates FIMP messages and publishes to MQTT topic .
  pt:j1/mt:evt/rt:dev/rn:test/ad:1/sv:sensor_lumin/ad:{{ variable "counter" false }}_0
  {% endraw %}
  ```
- 
+
  where *counter* is a name of variable 
  *false* is a flag which defines whether the variable is global or local
   In our example, if variable counter == 11 , the address string will be converted into - 
@@ -50,3 +52,6 @@ Defines payload (val) of fimp message . By default Flow engine will send content
 Other 2 options are 
  * set static value 
  * use value of configured variable 
+
+
+ 
