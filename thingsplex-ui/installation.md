@@ -38,14 +38,12 @@ The same view can be used to configure username and password or disable user aut
 
 ### Sign up
 
-By default Thingsplex UI is secured by username and password. After first installation the system will ask user to create admin user : 
+By default Thingsplex UI must be secured by username and password. After first installation,  user has to configure admin accont by setting username and password : 
 
 <img src="img/user-config.png" alt="drawing" width="400"/>
 
-It is not advices but user can also can disable authentication by selecting *Disable* option in dropdown menu.
+A users can disable authentication by selecting *Disable* option in dropdown menu.
 
 ### Login 
-
-Next time user will be asked to login using usarname and password provided in previos step 
 
 <img src="img/user-login.png" alt="drawing" width="400"/>
