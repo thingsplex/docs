@@ -10,7 +10,15 @@ has_children: true
 
 ## Introduction
 
-Thingsplex Flows is an automation engine. Each flow represents automation that is defined as a sequence of connected nodes (graph). Each node represents either flow trigger, data manipulation, flow control, or activity. Connections between nodes represent transitions from one node to another.
+Thingsplex Flows is an automation engine. Each flow represents automation that is defined as a sequence of connected nodes (graph). Each node represents either flow trigger, data manipulation, flow control, or activity. Connections between nodes (edges) represent transitions from one node to another.
+
+![Flow introduction](img/flow-concept-1.png)
+
+Example:
+
+![Flow introduction](img/flow-concept-2.png)
+
+Example in Thingsplex flow editor:
 
 ![Flow introduction](img/flow-intro.png)
 
