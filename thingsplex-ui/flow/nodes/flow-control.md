@@ -16,11 +16,17 @@ The node defines node transition rules , it takes variable and compares against 
 
 ## Time filter
 
+**WARNING** : The node works only with tpflow version > 1.0.1
+
 The node implements time base filter 
 
 ![Set variables](img/node-time-filter.png)
 
+
+
 ## Rate limit
+
+**WARNING** : The node works only with tpflow version > 1.0.1
 
 The node performs rate limiting of messages passing through the node.
 
