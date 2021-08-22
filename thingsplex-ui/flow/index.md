@@ -67,7 +67,7 @@ All modes are divided into the following groups :
 * [Actions](nodes/actions.md)
 * [Flow control](nodes/flow-control.md)
 * [Data operations](nodes/data.md)
-* Tools
+* [Tools](nodes/tools.md)
 
 ### Variables
 

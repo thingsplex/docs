@@ -121,3 +121,11 @@ The trigger saves "sunset" or "sunrise" into Input variable.
 
 The node triggers flow executed after home mode has been changes in Futurehome system or Shortcut has been executed by user .
 
+## HTTP and Websocket trigger
+
+The node trigger flow execution by receiving HTTP request of Websocket message. 
+
+![HTTP trigger](img/node-trigger-http-1.jpg)
+
+![HTTP action](img/node-trigger-http-ws-1.jpg)
+

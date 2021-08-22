@@ -60,5 +60,23 @@ The node supports 2 payload configuration options :
  * set static value.
  * set variable that contains payload value. 
 
+## HTTP request action 
 
- 
+The action makes HTTP request to configured endpoint and saves response to variable. 
+
+![HTTP action](img/node-action-http-1.jpg)
+
+![HTTP action](img/node-action-http-2.jpg)
+
+![HTTP action](img/node-action-http-3.jpg)
+
+![HTTP action](img/node-action-http-4.jpg)
+
+
+## HTTP/WS reply action 
+
+The action sends reply to http request (from HTTP trigger) or publishes websocket message. 
+
+![HTTP action](img/node-action-http-reply-1.jpg)
+
+![HTTP action](img/node-trigger-http-ws-2.jpg)
