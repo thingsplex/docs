@@ -443,17 +443,85 @@ type AppLogic struct {
     ctx *model.Context
 }
 
+func sendDataPoint(params exec.ScriptParams) {
+	dp := timeseries.MDataPoint{
+		Name    : "test_data_point",
+		Tags    : map[string]string {},
+		Fields  :  map[string]interface{} {"val":10},
+	}
+
+	dpReq := timeseries.WriteDataPointsRequest{
+		ProcID     :1,
+		Bucket     :"gen_default",
+		DataPoints :[]timeseries.MDataPoint{dp},
+	   }   
+	   
+	params.Timeseries.WriteDataPoints(&dpReq)
+}
+
 func Run(msg *model.Message,ctx *model.Context,params exec.ScriptParams) string {
+//  appL := AppLogic{mqtt:params.Mqtt,ctx:ctx}
  
  tsReq := timeseries.GetDataPointsRequest{
     ProcID            :1,
-    FieldName         :"value",
-    DataFunction      :"last",
-    MeasurementName   :"sensor_temp.evt.sensor.report",
-    RelativeTime      :"12h",
-    GroupByTime       :"1h",
-    GroupByTag        :"location_id",
-    FillType          :"previous"}
+	FieldName         :"value",
+	DataFunction      :"last",
+	MeasurementName   :"sensor_temp.evt.sensor.report",
+	RelativeTime      :"12h",
+	GroupByTime       :"1h",
+	GroupByTag        :"location_id",
+	FillType          :"previous"}
+ tsResult,err := params.Timeseries.GetDataPoints(&tsReq)     
+ if err != nil {
+     params.Log.Error("Error :",err)
+ } else {
+     msg.ValPayload = tsResult.Series
+ }
+
+ sendDataPoint(params)
+
+ params.Log.Info("New request , counter = ",counter)
+ 
+ counter++
+//  r := fmt.Sprintf("Hello %d",counter)
+//  ctx.SetVariable("hello_var","string",r,"",params.FlowId,true)
+ return "ok"
+}
+
+```
+
+Parsing HTTP request , requesting time series data and sending response : 
+
+```golang
+
+package ext
+
+import "fmt"
+import "encoding/json"
+import "github.com/thingsplex/tpflow/model"
+import "github.com/thingsplex/tpflow/node/action/exec"
+import "github.com/futurehomeno/fimpgo"
+import "github.com/thingsplex/tpflow/connector/plugins/timeseries"
+
+var counter int = 1
+
+func Run(msg *model.Message,ctx *model.Context,params exec.ScriptParams) string {
+
+ tsReq := timeseries.GetDataPointsRequest{
+    ProcID            :1,
+	FieldName         :"value",
+	DataFunction      :"last",
+	MeasurementName   :"sensor_temp.evt.sensor.report",
+	RelativeTime      :"3d",
+	GroupByTime       :"1h",
+	GroupByTag        :"location_id",
+	FillType          :"previous"}
+ 
+ params.Log.Info("Input payload size = ",len(msg.RawPayload))
+ 
+ // Unmarshaling Flowframe variable int tsReq variable 
+ json.Unmarshal(msg.RawPayload,&tsReq) 	
+
  tsResult,err := params.Timeseries.GetDataPoints(&tsReq)     
  if err != nil {
      params.Log.Error("Error :",err)
@@ -463,8 +531,10 @@ func Run(msg *model.Message,ctx *model.Context,params exec.ScriptParams) string 
  params.Log.Info("New request , counter = ",counter)
  
  counter++
+//  ctx.SetVariable("hello_var","string",r,"",params.FlowId,true)
  return "ok"
 }
 
 
 ```
+
