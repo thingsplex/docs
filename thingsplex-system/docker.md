@@ -11,15 +11,15 @@ System overview
 
 <img src="img/tp-fh-integr.png" alt="drawing" width="800"/>
 
-## Pre installation steps
+## Pre-installation steps
 
-The installation instractions assume that a user is familiar with docker engine and it is already configured and running.
+The installation instructions assume that a user is familiar with the docker engine and is already configured and running.
 
-It's advised to stop internal `ecollector` service before installing external container. It can be done in Hub->Application section of Thingsplex UI. 
+It's advised to stop the internal `ecollector` service before installing an external container. It can be done in Hub->Application section of Thingsplex UI. 
 
 <img src="img/service-stop.jpg" alt="drawing" width="500"/>
 
-If you have `tibber` already installed on Futurehome hub and you want to reuse existing registration , follow the step below which shows how to extract home-id and tokens. Or you can skip that and just follow regular registration process through FH app.
+If you have `tibber` already installed on Futurehome hub and you want to reuse existing registration, follow the step below which shows how to extract home-id and tokens. Or you can skip that and follow the regular registration process through the FH app.
 
 
 
@@ -32,7 +32,7 @@ Configure custom docker network by running the command:
 docker network create tplex-net
 ```
 
-Next step is optional but might be helpfull if you preffer to manage docker over nice UI.
+The next step is optional but might be helpful if you prefer to manage docker over friendly UI.
 
 ```
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
@@ -91,9 +91,9 @@ Request msg :
 
 <img src="img/tibber-token-extract.jpg" alt="drawing" width="500"/>
 
-Click on respone message and copy token and home-id frome there. 
+Click on response message and copy token and home-id from there. 
 
-Stop and disable or uninstall `tibber-ad` that is installed on FH smarthub, otherwise 2 adapters will be publishing the same information twice. 
+Stop and disable or uninstall `tibber-ad` that is installed on FH smarthub. Otherwise, two adapters will be publishing the same information twice. 
 
  The command for starting container if you want to reuse your token : 
 
@@ -114,7 +114,7 @@ docker run -d -v tibber:/thingsplex/tibber/data --restart unless-stopped \
            --network tplex-net --name tibber-ad thingsplex/tibber-ad:latest
 ```
 
-## Installing all containers at once using docker compose or docker stacks.
+## Install all containers at once using docker-compose or docker stacks.
 
 ```
 version: '3'
@@ -169,12 +169,12 @@ networks:
 ```
 
 
-## Post installation steps
+Post-installation steps
 
-Ecollector service must be configured after first installation. 
-The user must set FH smarthub IP address and port (given that port is open) and configure connection parameters to new influxdb instance.Influxdb host must be set to `influxdb1:8086`
+Ecollector service must be configured after the first installation. 
+The user must set FH smarthub IP address and port (given that port is open) and configure connection parameters to the new influxdb instance. Influxdb host parameter must be set to `influxdb1:8086`
 
 <img src="img/ecollector-config.jpg" alt="drawing" width="700"/>
 
-## Installing Thingsplex components along with Home Assistant 
+## Install Thingsplex components along with Home Assistant 
 WIP 
